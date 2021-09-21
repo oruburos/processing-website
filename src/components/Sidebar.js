@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import SidebarTreeList from './SidebarTreeList';
 import { LayoutContext } from './Layout';
 import FilterBar from './FilterBar';
-
+import { useIntl } from 'react-intl';
 import { useFilteredTree } from '../hooks';
 
 import * as css from './Sidebar.module.css';
@@ -46,10 +46,11 @@ export const Sidebar = memo(({ children, title, show, setShow = () => {} }) => {
 export const SidebarTree = memo(({ tree, title, show, useSerif, setShow }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const filtered = useFilteredTree(tree, searchTerm);
+  const intl = useIntl();
   return (
     <Sidebar title={title} show={show} setShow={setShow}>
       <FilterBar
-        placeholder={'Filter'}
+        placeholder={intl.formatMessage({id:"Filter"})}
         onChange={(e) => setSearchTerm(e.target.value)}
         onClick={(e) => setSearchTerm('')}
         searchTerm={searchTerm}
