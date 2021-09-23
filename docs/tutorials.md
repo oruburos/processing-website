@@ -14,3 +14,17 @@ All `.mdx` files can use custom React Components that are globally available wit
 ## Cover images
 
 Each tutorial has a cover image for the index pages that needs to be declared in the header of its `.mdx` file as a `coverImage` key with the filename of the cover that must be placed in the same folder. This image should have a `3:1` ratio with a minimum width of `600px`.
+
+
+## Translating Tutorials
+
+As explained in the [markdown pages](/docs/markdown-pages.md) guide.  
+1. Find the .mdx file in a folder 
+2. Make a copy by adding the language name in the filename (e.g. index.mdx becomes index.de.mdx)
+3. Publish the website
+
+If you are running the website locally with npm run dev, you might need to stop the development server and run npm run clean to clear the cache before seeing the changes on localhost.
+
+
+
+
